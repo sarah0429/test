@@ -1,0 +1,51 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/community/community",
+    "pages/userCenter/userCenter",
+    "pages/suggestForm/suggestForm",
+    "pages/complaintForm/complaintForm",
+    "pages/userConfirm/userConfirm",
+    "pages/userInfomation/userInfomation",
+    "pages/announcement/announcement",
+    "pages/updatePhone/updatePhone",
+    "pages/updateHouse/updateHouse",
+    "pages/updateName/updateName",
+    "pages/detailSug/detailSug",
+    "pages/detailCom/detailCom"
+  ],
+  "window": {
+    "backgroundColor": "#F6F6F6",
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#F6F6F6",
+    "navigationBarTitleText": "居福苑",
+    "navigationBarTextStyle": "black",
+    "cloud": true
+  },
+  "tabBar": {
+    "color": "#aaa",
+    "selectedColor": "#39b54a",
+    "borderStyle": "black",
+    "backgroundColor": "#ffffff",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "iconPath": "images/home.png",
+        "selectedIconPath": "images/home-fill.png",
+        "text": "首页"
+      },
+      {
+        "pagePath": "pages/community/community",
+        "iconPath": "images/community.png",
+        "selectedIconPath": "images/community-fill.png",
+        "text": "社区"
+      },
+      {
+        "pagePath": "pages/userCenter/userCenter",
+        "iconPath": "images/myself.png",
+        "selectedIconPath": "images/myself-fill.png",
+        "text": "我的"
+      }
+    ]
+  }
+}

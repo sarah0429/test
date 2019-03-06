@@ -1,0 +1,36 @@
+<!--index.wxml-->
+<view>
+  <!-- 滚动窗 -->
+  <!-- <view class='cu-form-group margin-top'></view> -->
+  <view class='space'></view>
+  <view class='swiper'>
+    <swiper indicator-dots='true' indicator-color='#c6dfc87c' indicator-active-color='#9fa39a' autoplay='true' interval='4000' style="height:{{imgheights[current]}}rpx;">
+      <block wx:for="{{imgUrls}}" wx:key="{{index}}">
+        <swiper-item style="">
+          <image src="{{item}}" class='image-view' style="height:{{imgheights[current]}}rpx;width:{{imgwidth}}rpx;" bindload="imageLoad" data-src='{{item}}' data-index='{{index}}'></image>
+        </swiper-item>
+      </block>
+    </swiper>
+  </view>
+
+  <!-- 服务功能 -->
+  <view class='service-bar'>
+    <bar class="margin-top bar">
+      <view class='action'>
+        <icon class='icon-title text-green ' />
+        <text>服务功能</text>
+      </view>
+    </bar>
+    <view class='line'></view>
+
+    <list class="grid no-border col-3">
+      <item wx:for="{{serviceBar}}" bindtap="{{item.fun}}" wx:key>
+        <icon class='icon-{{item.icon}} text-{{item.color}}'>
+          <tag wx:if="{{item.badge>0}}" class="badge">{{item.badge>99?'99+':item.badge}}</tag>
+        </icon>
+        <text>{{item.name}}</text>
+      </item>
+    </list>
+  </view>
+
+</view>

@@ -1,0 +1,15 @@
+<!--miniprogram/pages/updateHouse/updateHouse.wxml-->
+<form bindsubmit="onSave">
+
+  <form-group class="margin-top">
+    <view class='title'>房号</view>
+    <input placeholder="2-6个汉字" class='radius align-right' name='houseNum'  bindblur='checkHouseNum' bindinput='checkHouseNum' focus='true'></input>
+  </form-group>
+
+  <view class='warn'>{{warnText}}</view>
+
+  <view class="padding flex flex-direction">
+    <button class='bg-green margin-tb-sm lg' form-type="submit">保存</button>
+  </view>
+
+</form>

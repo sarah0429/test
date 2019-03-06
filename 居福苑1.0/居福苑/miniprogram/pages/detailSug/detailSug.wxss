@@ -1,0 +1,23 @@
+/* pages/detailSug/detailSug.wxss */
+.photoContain{
+  background-color: white;
+  display: flex;
+  flex-wrap: wrap;
+  position: relative;
+  align-content:center;
+}
+
+
+.item{
+  width: 227rpx;
+  height: 227rpx;
+  margin-top: 19rpx;
+  margin-left: 19rpx;
+  border-radius: 10rpx;
+}
+
+.showOne{
+  width: 500rpx;
+  height: 325rpx;
+  padding-left: 30rpx;
+}

@@ -1,0 +1,15 @@
+/* pages/community/community.wxss */
+
+.item{
+  width: 500rpx;
+  height: 325rpx
+}
+.title-omit {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.img-size {
+width: 218rpx;
+height: 218rpx;
+}

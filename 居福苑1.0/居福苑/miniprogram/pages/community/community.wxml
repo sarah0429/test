@@ -1,0 +1,120 @@
+<!--pages/community/community.wxml-->
+<view>
+  <view>
+    <bar class="search">
+      <view class='serach-form round'>
+        <icon class="icon-search" />
+        <input type="text" placeholder="输入搜索的关键词" confirm-type="search" />
+      </view>
+      <view class='action'>
+        <button class='bg-green shadow-blur round'>搜索</button>
+      </view>
+    </bar>
+  </view>
+
+  <scroll-view scroll-x class="bg-white nav">
+    <view class='flex text-center'>
+      <item class="flex-sub {{index==TabCur?'text-orange cur':''}}" wx:for="{{TabList}}" wx:key bindtap='tabSelect' data-id="{{index}}">
+        {{TabList[index].tab}}
+      </item>
+    </view>
+  </scroll-view>
+
+
+  <!-------- 公告 -------->
+  <card class="article no-card" wx:if="{{TabCur==0}}">
+    <item wx:for='{{announcement}}' wx:key data-id='{{index}}' bindtap='toAnnouncement' class="shadow">
+      <view class="title title-omit">{{item.title}}</view>
+      <view class="content">
+        <image wx:if="{{item.coverUrl}}" src="{{item.coverUrl}}" mode="aspectFill"></image>
+        <image wx:else src="/images/programAvatar.png" mode="aspectFit"></image>
+        <view class="desc">
+          <text class='text-content text-omit' decode='{{true}}'> {{item.content}}</text>
+          <view>
+            <tag class='bg-white light sm round' style='float: right;color:#b2bbbe'>{{item.time}}</tag>
+            <tag class='bg-white light sm round' style='float: right; margin-left:10px;color:#b2bbbe'>{{item.author}}</tag>
+          </view>
+        </view>
+      </view>
+      <view class='line' />
+    </item>
+  </card>
+
+  <!-------- 建议 -------->
+  <card class="dynamic no-card" wx:if="{{TabCur==1}}">
+    <item wx:for="{{suggest}}" wx:for-index='id' wx:key class="shadow " wx:if='{{suggest[id].isPublish}}'>
+      <list class="menu menu-avatar ">
+        <item>
+          <avatar wx:if="{{suggest[id].info.publisher=='匿名用户'}}" class="round lg " style="background-image:url(https://thumbnail0.baidupcs.com/thumbnail/182c16f6cb94af88fc44b6e948faa79d?fid=655384771-250528-974051070950968&time=1548838800&rt=sh&sign=FDTAER-DCb740ccc5511e5e8fedcff06b081203-OeXrPwNdePFqbcxKAScnQNiZWlo%3D&expires=8h&chkv=0&chkbd=0&chkpc=&dp-logid=8759924918173161398&dp-callid=0&size=c710_u400&quality=100&vuk=-&ft=video); ">
+          </avatar>
+          <avatar wx:else class="round lg " style="background-image:url({{suggest[id].info.avatar}}); "></avatar>
+          <view class='content flex-sub'>
+            <view>{{suggest[id].info.publisher}}</view>
+            <view class='text-gray text-sm flex justify-between'>
+              {{suggest[id].info.time}}
+            </view>
+          </view>
+        </item>
+      </list>
+      <view class='text-content'>
+        {{suggest[id].suggestion}}
+      </view>
+
+      <!--建议----九宫格图片区--->
+      <block wx:if='{{item.fileID[0]||item.videoID[0]}}'>
+        <view class="grid col-3 flex-sub padding-lr">
+          <view wx:for='{{item.fileID}}' wx:key>
+            <image class='img-size' mode='aspectFill' bindtap='previewImageSug' data-index="{{index}}" data-item="{{item}}" data-id='{{id}}' src='{{item}}'></image>
+          </view>
+          <view wx:for='{{item.videoID}}' wx:key='*this'>
+            <video class='img-size' src='{{item}}' enable-play-gesture></video>
+          </view>
+        </view>
+      </block>
+
+      <!-- <view class='text-gray text-sm text-right padding'>
+          <icon class="icon-attentionfill " /> 10
+          <icon class="icon-appreciatefill " /> 20
+          <icon class="icon-messagefill " /> 30
+        </view> -->
+
+      <view class='line margin-top' />
+    </item>
+  </card>
+
+
+  <!-------- 投诉 -------->
+  <card class="dynamic no-card" wx:if="{{TabCur==2}}">
+    <item wx:for="{{complaint}}" wx:for-index='id' wx:key class="shadow " wx:if='{{complaint[id].isPublish}}'>
+      <list class="menu menu-avatar ">
+        <item>
+          <avatar wx:if="{{complaint[id].info.publisher=='匿名用户'}}" class="round lg " style="background-image:url(https://thumbnail0.baidupcs.com/thumbnail/182c16f6cb94af88fc44b6e948faa79d?fid=655384771-250528-974051070950968&time=1548838800&rt=sh&sign=FDTAER-DCb740ccc5511e5e8fedcff06b081203-OeXrPwNdePFqbcxKAScnQNiZWlo%3D&expires=8h&chkv=0&chkbd=0&chkpc=&dp-logid=8759924918173161398&dp-callid=0&size=c710_u400&quality=100&vuk=-&ft=video)">
+          </avatar>
+          <avatar wx:else class="round lg " style="background-image:url({{complaint[id].info.avatar}}); "></avatar>
+          <view class='content flex-sub'>
+            <view>{{complaint[id].info.publisher}}</view>
+            <view class='text-gray text-sm flex justify-between'>
+              {{complaint[id].info.time}}
+            </view>
+          </view>
+        </item>
+      </list>
+      <view class='text-content'>
+        {{complaint[id].complaint}}
+      </view>
+      <!-->投诉----九宫格图片区
+      <--->
+        <block wx:if='{{item.fileID[0]||item.videoID[0]}}'>
+          <view class="grid col-3 flex-sub padding-lr">
+            <view wx:for='{{item.fileID}}' wx:key>
+              <image class='img-size' mode='aspectFill' bindtap='previewImageCom' data-index="{{index}}" data-item="{{item}}" data-id='{{id}}' src='{{item}}'></image>
+            </view>
+            <view wx:for='{{item.videoID}}' wx:key='*this'>
+              <video class='img-size' src='{{item}}' enable-play-gesture></video>
+            </view>
+          </view>
+        </block>
+        <view class='line margin-top' />
+    </item>
+  </card>
+</view>

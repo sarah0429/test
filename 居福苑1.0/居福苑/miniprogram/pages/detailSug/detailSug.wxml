@@ -1,0 +1,38 @@
+ <card class="dynamic no-card" wx:if="{{!TabCur==1}}">
+    <item>
+      <list class="menu menu-avatar ">
+        <item>
+          <avatar class="round lg " style="background-image:url( {{suggest.info.avatar}}); "></avatar>
+          <view class='content flex-sub'>
+            <view>{{suggest.info.publisher}}</view>
+            <view class='text-gray text-sm flex justify-between'>
+              {{suggest.info.time}}
+            </view>
+          </view>
+        </item>
+      </list>
+      <view class='text-content'>
+        {{suggest.suggestion}}
+      </view>
+         <!-->建议----九宫格图片区<--->
+      <view class="photoContain">
+      <image class='showOne' hidden='{{showOne}}' src='{{suggest.fileID[0]}}' bindtap='previewImage'></image>
+          
+    <view wx:for='{{suggest.fileID}}' wx:key='*this' hidden='{{!showOne}}'>
+      <image class='item' src='{{item}}' bindtap='previewImage' data-index="{{index}}"></image>
+  </view>
+  <view wx:for='{{suggest.videoID}}' wx:key='*this'>
+      <video class='item' src='{{item}}' ></video>
+    </view>
+  </view>
+  
+
+        <!-->建议----下面的点赞等图标区<---> 
+      <view class='text-gray text-sm text-right padding' catchtap="clickSuggestLike" data-index="{{index}}">
+        <icon class="icon-appreciatefill " /> {{suggest.scan.like.likeNum}}
+      </view>
+
+      <view class='line' />
+    </item>
+  </card>
+

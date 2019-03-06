@@ -1,0 +1,79 @@
+{
+	"miniprogramRoot": "miniprogram/",
+	"cloudfunctionRoot": "cloudfunctions/",
+	"setting": {
+		"urlCheck": true,
+		"es6": true,
+		"postcss": true,
+		"minified": true,
+		"newFeature": true,
+		"autoAudits": false
+	},
+	"appid": "wx60c6ecb9bfd524b5",
+	"projectname": "%E5%B1%85%E7%A6%8F%E8%8B%91",
+	"libVersion": "2.5.1",
+	"condition": {
+		"search": {
+			"current": -1,
+			"list": []
+		},
+		"conversation": {
+			"current": -1,
+			"list": []
+		},
+		"plugin": {
+			"current": -1,
+			"list": []
+		},
+		"game": {
+			"list": []
+		},
+		"miniprogram": {
+			"current": 6,
+			"list": [
+				{
+					"id": -1,
+					"name": "测试complaint",
+					"pathName": "pages/complaintForm/complaintForm",
+					"query": ""
+				},
+				{
+					"id": 2,
+					"name": "测试comfirm",
+					"pathName": "pages/userConfirm/userConfirm",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "测试suggest",
+					"pathName": "pages/suggestForm/suggestForm",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "userCenter",
+					"pathName": "pages/userCenter/userCenter",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "index",
+					"pathName": "pages/index/index",
+					"query": ""
+				},
+				{
+					"id": 6,
+					"name": "community",
+					"pathName": "pages/community/community",
+					"query": "TabCur=2"
+				},
+				{
+					"id": -1,
+					"name": "userInfomation",
+					"pathName": "pages/userInfomation/userInfomation",
+					"query": ""
+				}
+			]
+		}
+	}
+}

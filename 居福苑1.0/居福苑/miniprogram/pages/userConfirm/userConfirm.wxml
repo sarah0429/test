@@ -1,0 +1,48 @@
+<!--miniprogram/pages/usercheck/usercheck.wxml-->
+<form bindsubmit="onConfirm">
+
+  <form-group class="margin-top">
+    <view class='title'>业主名字</view>
+    <input placeholder="2-6个汉字" class='radius align-right' name='name' bindinput='checkName' focus='true'></input>
+  </form-group>
+
+  <form-group>
+    <view class='title'>小区名称</view>
+    <picker bindchange="PickerChangeCommunityName" value="{{indexCommunitys}}" range="{{communitys}}">
+      <view class="picker">
+        {{indexCommunitys?communitys[indexCommunitys]:'请点击选择'}}
+      </view>
+    </picker>
+  </form-group>
+  <form-group>
+    <view class='title'>栋号</view>
+    <picker bindchange="PickerChangeBuildingNum" value="{{indexBuildings}}" range="{{buildings}}">
+      <view class="picker">
+        {{indexBuildings?buildings[indexBuildings]:'请点击选择'}}
+      </view>
+    </picker>
+  </form-group>
+  <form-group>
+    <view class='title'>房号</view>
+    <input placeholder="3-5个数字" class='radius align-right' name='houseNum' bindinput='checkHouseNum'></input>
+  </form-group>
+  <form-group>
+    <view class='title'>联系电话</view>
+    <input placeholder="手机/座机号码" class='radius align-center' name='phoneNum' bindinput='checkPhoneNum'></input>
+    <capsule class="radius">
+      <tag class='bg-blue '>
+        +86
+      </tag>
+      <tag class="line-blue">
+        中国大陆
+      </tag>
+    </capsule>
+  </form-group>
+
+  <view class='warn'>{{warnText}}</view>
+
+  <view class="padding flex flex-direction">
+    <button class='bg-green margin-tb-sm lg' form-type="submit">业主认证</button>
+  </view>
+
+</form>

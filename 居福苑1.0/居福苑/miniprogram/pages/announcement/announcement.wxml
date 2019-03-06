@@ -1,0 +1,17 @@
+<view wx:if="{{announcement[id].url}}">
+  <web-view src="{{announcement[id].url}}"></web-view>
+</view>
+
+<view wx:else>
+  <text class='title '>{{announcement[id].title}}</text>
+    <text class='text-gray text-space'>{{announcement[id].author}} {{announcement[id].time}}</text>
+  <view class='content' >
+    <text space='emsp' decode='{{true}}'>{{reContent}}</text>
+  </view>
+  <view class='end'>
+   <text class='text-gray text-space'>文章已于{{announcement[id].time}}修改</text>
+  </view>
+</view>
+
+
+  

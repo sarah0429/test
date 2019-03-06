@@ -1,0 +1,72 @@
+<!--miniprogram/pages/suggestForm/suggestForm.wxml-->
+
+<form bindsubmit="onConfirm">
+
+  <!-- <form-group>
+    <view class='title'>标题</view>
+    <input placeholder="简短语句" class='radius' name='head' focus='true' bindblur='checkHead'></input>
+  </form-group> -->
+
+  <form-group>
+    <view class='title'>发布人</view>
+    <input placeholder="自动获取" class='radius' name='publisher' value='{{publisher}}' disabled='true'></input>
+    <button class='cu-btn bg-green shadow' bindtap='hideName'>匿名</button>
+  </form-group>
+
+  <form-group class="margin-top">
+    <view class='title'>发布时间</view>
+    <input placeholder="自动获取" class='radius' name='time' value='{{time}}' disabled='true'></input>
+  </form-group>
+
+  <form-group>
+    <view class='title'>所属类别</view>
+    <picker bindchange="PickerChange" value="{{index}}" range="{{picker}}">
+      <view class="picker">
+        {{index?picker[index]:'请点击选择'}}
+      </view>
+    </picker>
+  </form-group>
+
+  <form-group class='margin-top' wx:hide="{{modalName==null}}">
+    <textarea placeholder="建议详情（100字以内)" maxlength="100"  disabled="{{modalName!=null}}" placeholder-class='placeholder' name='suggestion' bindblur='checkSuggestion'></textarea>
+  </form-group>
+
+  <bar class="margin-top">
+    <view class='action'>
+      <icon class='icon-title text-blue' />附件
+      <view class='text-sm text-orange align-center text-padding'>
+         (最多6个，视频不能长于60秒)
+      </view>
+    </view>
+  </bar>
+  <view class='line'></view>
+
+  <form-group>
+    <view class="grid col-3 grid-square flex-sub">
+
+      <view wx:for="{{tempFilePaths}}" class=" bg-img">
+        <image class='img-size' src='{{item}}' bindtap='previewImage' data-index="{{index}}"></image>
+        <tag class="bg-red" bindtap='deletePhoto' data-index='{{index}}'>
+          <icon class='icon-close'></icon>
+        </tag>
+      </view>
+
+      <view wx:for="{{tempFileVideo}}" class="bg-img">
+        <video class='img-size' src='{{item}}' data-index="{{index}}"></video>
+        <tag class="bg-red" bindtap='deleteVideo' data-index='{{index}}'>
+          <icon class='icon-close'></icon>
+        </tag>
+      </view>
+
+      <view class="padding-xs solids" bindtap='mediaTap' wx:if='{{count<6}}'>
+        <icon class='icon-cameraadd'></icon>
+      </view>
+    </view>
+  </form-group>
+
+  <view class='warn'>{{warnText}}</view>
+
+  <view class="padding flex flex-direction">
+    <button class='bg-green margin-tb-sm lg' form-type="submit">提交</button>
+  </view>
+</form>

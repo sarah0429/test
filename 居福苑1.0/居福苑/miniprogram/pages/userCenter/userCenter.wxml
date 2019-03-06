@@ -1,0 +1,47 @@
+<!--miniprogram/pages/userCenter/userCenter.wxml-->
+<view>
+  <view class='userinfo'>
+    <view class='userinfo-avatar'>
+      <open-data type="userAvatarUrl" lang="zh_CN"></open-data>
+    </view>
+    <view class='userinfo-nickname'>
+      <view wx:if="{{ !hadConfirm }}">
+        <button class='round bg-green shadow' type='primary' open-type="getUserInfo" lang="zh_CN" bindgetuserinfo="bindGetUserInfo"> 业主认证 </button>
+      </view>
+      <view wx:else>
+        <!-- <text>123</text> -->
+        <text>{{name}}</text>
+      </view>
+    </view>
+  </view>
+
+  <view class='margin-top'></view>
+  <list class="menu">
+
+    <item wx:if="{{ !ifPass }}">
+      <view class='content'>
+        <icon class='icon-roundrightfill text-grey' />
+        <text class='text-grey' >{{myselfConsole[0].title}}</text>
+      </view>
+      <view class='action'>
+        <button class='round bg-green sm button-top' hover-class='none'>
+          <icon class='icon-warn' />
+          <text wx:if="{{ !hadConfirm }}" >未认证</text>
+          <text wx:elif="{{ !ifPass }}">待审核</text>
+        </button>
+      </view>
+    </item>
+    <item wx:else class="arrow" bindtap="clickUserInfo">
+      <view class='content'>
+        <icon class='icon-roundrightfill text-grey icon-bottom' />
+        <text class='text-grey'>{{myselfConsole[0].title}}</text>
+      </view>
+    </item>
+    <item class="arrow" data-id="" bindtap="">
+      <button open-type="contact" class='content' hover-class='none'>
+        <icon class='icon-roundrightfill text-grey' />
+        <text class='text-grey'>{{myselfConsole[2].title}}</text>
+      </button>
+    </item>
+  </list>
+</view>

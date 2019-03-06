@@ -1,0 +1,24 @@
+/* miniprogram/pages/userComfirm/userComfirm.wxss */
+
+.sub {
+  margin-top: 50rpx;
+}
+
+.align-right {
+  text-align: right;
+}
+
+.align-center {
+  text-align: center;
+}
+
+.warn {
+  height: 50rpx;
+  width: 450rpx;
+  margin-left: 150rpx;
+  margin-top: 30rpx;
+  font-size: 30rpx;
+  color: red;
+  display: flex;
+  justify-content: center;
+}

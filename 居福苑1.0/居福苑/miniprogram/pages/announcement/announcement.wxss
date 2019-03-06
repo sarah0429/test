@@ -1,0 +1,39 @@
+/* miniprogram/pages/announcement/announcement.wxss */
+page{
+  background-color: white
+}
+.title{ 
+ font-size: 45rpx;
+ line-height: 50rpx; 
+ color: rgb(50, 50, 50); 
+ font-weight:500; 
+ margin-top: 50rpx;
+ margin-left: 25rpx;
+ margin-right: 25rpx;
+ margin-bottom: 30rpx;
+ letter-spacing:1px; /* 字间距 */
+ display: flex;
+ flex-wrap:wrap;
+ }
+
+.content{ 
+ line-height: 50rpx;
+ letter-spacing:1px; /* 字间距 */
+ margin: 20rpx; 
+ font-size: 35rpx; 
+ color: rgb(65, 64, 64);
+ text-align: justify;
+}
+
+.end{
+  margin-top: 80rpx;
+  display: flex;
+}
+
+.text-space{
+  font-size: 30rpx; 
+  margin-left: 25rpx;
+  letter-spacing:2px; /* 字间距 */
+  padding-bottom: 30px;
+  display: flex;
+}

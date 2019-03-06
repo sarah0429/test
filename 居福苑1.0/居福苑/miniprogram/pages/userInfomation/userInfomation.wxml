@@ -1,0 +1,51 @@
+<!--miniprogram/pages/userInformation/userInformation.wxml-->
+<!-- <navigator url="/pages/updateName/updateName"> -->
+  <form-group>
+    <view class='title'>姓名</view>
+    <picker disabled="true" mode="region" bindchange="RegionChange" value="{{region}}" custom-item="{{customItem}}">
+      <view class="picker">
+        {{name}}
+      </view>
+    </picker>
+  </form-group>
+<!-- </navigator> -->
+
+<form-group style='margin-top:5px'>
+  <view class='title'>小区</view>
+  <picker disabled="true" bindchange="PickerChangeCommunityName" value="{{indexCommunitys}}" range="{{communitys}}">
+    <view class="picker">
+      {{communitys[indexCommunitys]}}
+    </view>
+  </picker>
+</form-group>
+
+<form-group style='margin-top:5px'>
+  <view class='title'>栋号</view>
+  <picker disabled="true" bindchange="PickerChangeBuildingNum" value="{{indexBuildings}}" range="{{buildings}}">
+    <view class="picker">
+      {{buildings[indexBuildings]}}
+    </view>
+  </picker>
+</form-group>
+
+<!-- <navigator url="/pages/updateHouse/updateHouse"> -->
+  <form-group style='margin-top:5px'>
+    <view class='title'>房号</view>
+    <picker disabled="true" mode="region" bindchange="RegionChange" value="{{region}}" custom-item="{{customItem}}">
+      <view class="picker">
+        {{houseNum}}
+      </view>
+    </picker>
+  </form-group>
+<!-- </navigator> -->
+
+<!-- <navigator url="/pages/updatePhone/updatePhone"> -->
+  <form-group style='margin-top:5px'>
+    <view class='title'>手机号码</view>
+    <picker disabled="true" mode="region" bindchange="RegionChange" value="{{region}}" custom-item="{{customItem}}">
+      <view class="picker">
+        {{phoneNum}}
+      </view>
+    </picker>
+  </form-group>
+<!-- </navigator> -->

@@ -1,0 +1,11 @@
+/* miniprogram/pages/updatePhone/updatePhone.wxss */
+.warn{
+  height: 50rpx;
+  width: 450rpx;
+  margin-left: 150rpx;
+  margin-top: 30rpx;
+  font-size: 30rpx;
+  color: red;
+  display: flex;
+  justify-content:center;
+}

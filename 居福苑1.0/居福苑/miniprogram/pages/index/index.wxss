@@ -1,0 +1,40 @@
+/**index.wxss**/
+
+.service-bar {
+  overflow: hidden;
+  padding-right: 20rpx;
+  padding-left: 20rpx;
+}
+
+form-group .title {
+  min-width: calc(4em + 15px);
+}
+
+.text {
+  text-align: center;
+  color: white;
+}
+
+.swiper {
+  width: 100%;
+}
+
+.page {
+  background: #f1f1f1;
+}
+
+.switch-sex::after {
+  content: "\e716";
+}
+
+.switch-sex::before {
+  content: "\e7a9";
+}
+
+.switch-music::after {
+  content: "\e66a";
+}
+
+.switch-music::before {
+  content: "\e6db";
+}

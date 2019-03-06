@@ -1,0 +1,16 @@
+/* miniprogram/pages/test01/test01.wxss */
+.cantainer {
+  display: flex;
+  flex-direction: column;
+}
+
+.warn{
+  height: 50rpx;
+  width: 450rpx;
+  margin-left: 150rpx;
+  margin-top: 30rpx;
+  font-size: 30rpx;
+  color: red;
+  display: flex;
+  justify-content:center;
+}
